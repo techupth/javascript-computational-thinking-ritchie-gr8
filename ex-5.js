@@ -82,3 +82,16 @@ let orders = [
 ];
 
 // Start coding here
+
+let mostExpensiveOrder = null
+let highestPrice = Number.MIN_VALUE
+
+for (const order of orders) {
+  const totalPrice = order.productPrice * order.productQuantity
+  if (totalPrice > highestPrice) {
+    mostExpensiveOrder = order
+    highestPrice = totalPrice
+  }
+}
+
+console.log(`The most expensive order is order id ${mostExpensiveOrder.id} (${highestPrice.toLocaleString()} Baht)`)
