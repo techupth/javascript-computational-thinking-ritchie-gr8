@@ -82,3 +82,13 @@ let orders = [
 ];
 
 // Start coding here
+const wantedCustomerName = "Birdie Shepland"
+let result = 0
+for (const order of orders) {
+  if (order.customerName !== wantedCustomerName) continue
+
+  const price = order.productPrice * order.productQuantity
+  result += price
+}
+
+console.log(`Total paid amount of ${wantedCustomerName}: ${result.toLocaleString()} Baht`)

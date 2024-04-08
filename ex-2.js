@@ -82,3 +82,13 @@ let orders = [
 ];
 
 // Start coding here
+let result = 0
+const wantedCardType = "jcb"
+for (let i = 0; i < orders.length; i++) {
+  if (orders[i].creditCardType !== wantedCardType) continue
+
+  const price = orders[i].productPrice * orders[i].productQuantity
+  result += price
+}
+
+console.log(`Paid by ${wantedCardType.toLocaleUpperCase()} credit card amount: (${result.toLocaleString()} Baht)`)
